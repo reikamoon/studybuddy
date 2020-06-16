@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+{% if assignments_list %}
+{% for assignment in assignments_list %}
+<center>
+<h1>{{ assignment.assignment_name }}</h1>
+<h2>Due by: {{ assignment.due_date }}</h2>
+<b>My Work: {{ assignment.assignment_link }}</b>
+<b>Turn in Link: {{ assignment.dropbox }}</b>
+</center>
+{% endif %}
+{% else %}
 <center><h1>StudyBuddy</h1>
 <h2>How it Works</h2>
 </center>
-{% if request.user.is_authenticated %}
-
 {% endif %}
 
 {% endblock %}
