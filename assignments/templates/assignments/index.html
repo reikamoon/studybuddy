@@ -5,10 +5,16 @@
 {% if assignments_list %}
 {% for assignment in assignments_list %}
 <center>
-<h1>{{ assignment.assignment_name }}</h1>
-<h2>Due by: {{ assignment.due_date }}</h2>
-<b>My Work: {{ assignment.assignment_link }}</b>
-<b>Turn in Link: {{ assignment.dropbox }}</b>
+<h1>My Assignments</h1><br>
+<h1><a href = "{{ assignment.assignment_link }}">{{ assignment.assignment_name }}</a></h1>
+<h2>Due by: <a href = "{{ assignment.dropbox }}">{{ assignment.due_date }}</h2>
+<h3><a href ="{{ assignment.assignment_link }}">Link to my Assignment</a></h3>
+<h3><a href = "{{ assignment.dropbox }}">Turn-In Link</a></h3>
+</center>
+{% endfor %}
+{% else %}
+<center>
+<h1>No Assignments.</h1>
 </center>
 {% endif %}
 {% else %}
