@@ -105,6 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
+#App Settings for Assignment Slug
+ASSIGNMENT_TITLE_MAX_LENGTH = 200
+
 #Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"

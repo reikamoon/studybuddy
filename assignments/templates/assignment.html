@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center><h1>{{ assignment.assignment_name }}</h1>
+<div class = "container">
+<h2>Due by: <a href = "{{ assignment.dropbox }}">{{ assignment.due_date }}</h2>
+<h3><a href ="{{ assignment.assignment_link }}">Link to my Assignment</a></h3>
+<p>{{ assignment.description }}</p>
+<h3><a href = "{{ assignment.dropbox }}">Turn-In Link</a></h3>
+</div>
+</center>
+
+{% endblock %}

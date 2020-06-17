@@ -10,6 +10,7 @@
 <h2>Due by: <a href = "{{ assignment.dropbox }}">{{ assignment.due_date }}</h2>
 <h3><a href ="{{ assignment.assignment_link }}">Link to my Assignment</a></h3>
 <h3><a href = "{{ assignment.dropbox }}">Turn-In Link</a></h3>
+<a href="{% url 'new' %}" class="btn btn-secondary ml-1">New Assignment</a>
 </center>
 {% endfor %}
 {% else %}
