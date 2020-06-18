@@ -25,7 +25,7 @@ SECRET_KEY = ')byup8kg9$iv6d-%jnlh+29w317a-@_%l8@!2=tvyvcv)wc_fl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'studybuddy-aa.herokuapp.com']
 
 
 # Application definition
@@ -128,3 +128,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
