@@ -7,6 +7,7 @@
 <h3><a href ="{{ assignment.assignment_link }}">Link to my Assignment</a></h3>
 <p>{{ assignment.description }}</p>
 <h3><a href = "{{ assignment.dropbox }}">Turn-In Link</a></h3>
+<a href="{% url 'edit-assignment' assignment.slug %}" class="btn btn-primary ml-1">Edit</a> <a href="{% url 'delete-assignment' assignment.slug %}" class="btn btn-primary ml-1">Delete</a>
 </div>
 </center>
 

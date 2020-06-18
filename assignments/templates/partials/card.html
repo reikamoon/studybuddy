@@ -1,0 +1,10 @@
+<div class = "card mb-3">
+  <center>
+  <h1 class = "card-header"><a href = "{{ assignment.assignment_link }}">{{ assignment.assignment_name }}</a> <a href="{% url 'edit-assignment' assignment.slug %}" class="btn btn-primary ml-1">Edit</a> <a href="{% url 'delete-assignment' assignment.slug %}" class="btn btn-primary ml-1">Delete</a></h1>
+  <h3><a href ="{{ assignment.assignment_link }}">Link to my Assignment</a></h3>
+  <h3>Due by: <a href = "{{ assignment.dropbox }}">{{ assignment.due_date }}</h3>
+    <h3><a href = "{{ assignment.dropbox }}">Turn-In Link</a></h3><br>
+    </center>
+    <a href="{% url 'assignment-details-page' assignment.slug %}" class="btn btn-primary ml-1">Details</a><hr>
+
+    </div>

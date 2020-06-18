@@ -3,15 +3,11 @@
 {% block content %}
 {% if request.user.is_authenticated %}
 {% if assignments_list %}
-{% for assignment in assignments_list %}
-<center>
-<h1>My Assignments</h1><br>
-<h1><a href = "{{ assignment.assignment_link }}">{{ assignment.assignment_name }}</a></h1>
-<h2>Due by: <a href = "{{ assignment.dropbox }}">{{ assignment.due_date }}</h2>
-<h3><a href ="{{ assignment.assignment_link }}">Link to my Assignment</a></h3>
-<h3><a href = "{{ assignment.dropbox }}">Turn-In Link</a></h3>
-<a href="{% url 'new' %}" class="btn btn-secondary ml-1">New Assignment</a>
+<center><h1>My Assignments</h1>
+<a href="{% url 'new' %}" class="btn btn-primary ml-1">New Assignment</a><br><br>
 </center>
+{% for assignment in assignments_list %}
+{% include "partials/card.html" %}
 {% endfor %}
 {% else %}
 <center>
