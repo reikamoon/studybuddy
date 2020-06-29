@@ -6,6 +6,7 @@ from django.utils.text import slugify
 class Class(models.Model):
     class_name = models.CharField(max_length=200, help_text="Enter class name.")
     class_link = models.URLField(max_length=200, help_text="Add a link to class sessions (ex: Zoom)")
+    days = models.CharField(max_length=200, default="Mondays", help_text="What Days of the Week do I need to attend?")
     syllabus = models.URLField(max_length=200, null=True, blank=True, help_text="[Optional]Add a link to the Syllabus.")
     tracker = models.URLField(max_length=200, null=True, blank=True, help_text="[Optional]Add a link to class tracker.")
     grades = models.URLField(max_length=200, null=True, blank=True, help_text="[Optional]Add a link to grades for this class.")

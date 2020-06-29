@@ -11,7 +11,7 @@ from django.views.generic.edit import DeleteView, UpdateView
 
 # Create your views here.
 def schedule_index(request):
-    schedule = Assignment.objects.order_by('class_name')[:5]
+    schedule = Class.objects.order_by('class_name')[:5]
     context = {'schedule': schedule}
     return render(request, 'schedule/schedule_index.html', context)
 
@@ -37,7 +37,7 @@ class AddClass(CreateView):
 
 class UpdateClass(UpdateView):
     model = Class
-    fields = ['class_name', 'class_link', 'syllabus', 'tracker', 'grades',]
+    fields = ['class_name', 'class_link', 'days', 'syllabus', 'tracker', 'grades',]
     template_name_suffix = '_update_form'
 
 class DeleteClass(DeleteView):
