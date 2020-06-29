@@ -6,8 +6,10 @@ import requests
 from django.urls import reverse_lazy
 from .models import Assignment
 from .forms import AssignmentForm
+from schedule.models import Class
 from django.contrib import messages
 from django.views.generic.edit import DeleteView, UpdateView
+
 
 # Create your views here.
 def index(request):
@@ -23,7 +25,6 @@ class AssignmentDetailView(DetailView):
         return render(request, 'assignment.html', {
             'assignment': assignment
         })
-
 
 class CreateAssignment(CreateView):
     def get(self, request, *args, **kwargs):

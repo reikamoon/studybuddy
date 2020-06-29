@@ -1,5 +1,4 @@
 from django.urls import path
-from . import views
 from schedule.views import ClassDetailView, AddClass, DeleteClass, UpdateClass
 
 urlpatterns = [

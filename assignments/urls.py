@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from schedule.views import *
 from assignments.views import AssignmentDetailView, CreateAssignment, DeleteAssignment, UpdateAssignment
 
 urlpatterns = [

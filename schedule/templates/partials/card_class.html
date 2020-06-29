@@ -1,0 +1,8 @@
+<div class = "card mb-3">
+  <center>
+  <h1 class = "card-header"><a href = "{{ class.class_link }}">{{ class.class_name }}</a> <a href="{% url 'edit-class' class.slug %}" class="btn btn-primary ml-1">Edit</a> <a href="{% url 'delete-class' class.slug %}" class="btn btn-primary ml-1">Delete</a></h1>
+  <h3>Attend Class: {{ class.days }}</h3>
+  <h3><a href ="{{ class.class_link }}">Link to Class Session</a></h3>
+    </center>
+    <a href="{% url 'class-details-page' class.slug %}" class="btn btn-primary ml-1">Details</a><hr>
+    </div>

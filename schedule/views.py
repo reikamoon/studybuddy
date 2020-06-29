@@ -21,7 +21,7 @@ class ClassDetailView(DetailView):
         """Returns a specific class by its slug"""
         my_class = self.get_queryset().get(slug__iexact=slug)
         return render(request, 'class.html', {
-            'my_class': class
+            'my_class': my_class
         })
 
 class AddClass(CreateView):

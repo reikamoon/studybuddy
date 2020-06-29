@@ -19,7 +19,7 @@ class Class(models.Model):
     def get_absolute_url(self):
         """Returns a fully-qualified path for a page"""
         path_components = {'slug': self.slug}
-        return reverse('assignment-details-page', kwargs=path_components)
+        return reverse('class-details-page', kwargs=path_components)
 
     def save(self, *args, **kwargs):
         """Create a URL Safe slug automatically when a new assignment is created"""
