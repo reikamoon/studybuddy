@@ -10,31 +10,36 @@ from django.contrib import messages
 from django.views.generic.edit import DeleteView, UpdateView
 
 # Create your views here.
+def schedule_index(request):
+    schedule = Assignment.objects.order_by('class_name')[:5]
+    context = {'schedule': schedule}
+    return render(request, 'schedule/schedule_index.html', context)
+
 class ClassDetailView(DetailView):
-    model = Assignment
+    model = Class
     def get(self, request, slug):
-        """Returns a specific assignment by its slug"""
-        assignment = self.get_queryset().get(slug__iexact=slug)
-        return render(request, 'assignment.html', {
-            'assignment': assignment
+        """Returns a specific class by its slug"""
+        my_class = self.get_queryset().get(slug__iexact=slug)
+        return render(request, 'class.html', {
+            'my_class': class
         })
 
-class CreateAssignment(CreateView):
+class AddClass(CreateView):
     def get(self, request, *args, **kwargs):
-        context = {'form': AssignmentForm()}
-        return render(request, 'assignment_new.html', context)
+        context = {'form': ClassForm()}
+        return render(request, 'class_new.html', context)
 
     def post(self, request, *args, **kwargs):
-        form = AssignmentForm(request.POST)
+        form = ClassForm(request.POST)
         if form.is_valid():
             post = form.save()
             return HttpResponseRedirect(reverse_lazy('home'))
 
-class UpdateAssignment(UpdateView):
-    model = Assignment
-    fields = ['assignment_name', 'assignment_link', 'description', 'due_date', 'dropbox']
+class UpdateClass(UpdateView):
+    model = Class
+    fields = ['class_name', 'class_link', 'syllabus', 'tracker', 'grades',]
     template_name_suffix = '_update_form'
 
-class DeleteAssignment(DeleteView):
-    model = Assignment
+class DeleteClass(DeleteView):
+    model = Class
     success_url = "/"
