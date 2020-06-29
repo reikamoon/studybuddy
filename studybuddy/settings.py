@@ -25,7 +25,7 @@ SECRET_KEY = ')byup8kg9$iv6d-%jnlh+29w317a-@_%l8@!2=tvyvcv)wc_fl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'studybuddy-aa.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'studybuddy-aa.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'assignments',
+    'schedule',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #App Settings for Assignment Slug
 ASSIGNMENT_TITLE_MAX_LENGTH = 200
+
+#App Settings for Schedule Slug
+CLASS_TITLE_MAX_LENGTH = 200
 
 #Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"
