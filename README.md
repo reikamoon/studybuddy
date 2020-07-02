@@ -13,7 +13,7 @@ You **MUST** have an account to use studybuddy! Sign Up using the button on the 
 
 ## Update :exclamation:
 * Users can now add classes to their class schedule.<br>
-* Class Schedule includes links to syllabus, progress tracker, grades, as well as zoom links (for online classes).<br>
+* Class Schedule can include links to syllabus, progress tracker, grades, as well as zoom links (for online classes).<br>
 * Easy to edit or delete classes when necessary. <br>
 * Easy access to all your class materials!
 
