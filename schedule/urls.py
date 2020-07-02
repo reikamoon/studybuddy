@@ -1,8 +1,8 @@
 from django.urls import path
-from schedule.views import ClassDetailView, AddClass, DeleteClass, UpdateClass
+from schedule.views import schedule_index, ClassDetailView, AddClass, DeleteClass, UpdateClass
 
 urlpatterns = [
-    path('schedule/', views.schedule_index, name="schedule"),
+    path('schedule-index/', views.schedule_index, name="schedule"),
     path('add-class/', AddClass.as_view(),name='addclass'),
     path('<str:slug>/', ClassDetailView.as_view(), name='class-details-page'),
     path('<str:slug>/edit', UpdateClass.as_view(), name='edit-class'),

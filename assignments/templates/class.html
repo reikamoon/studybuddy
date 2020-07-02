@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<a href="{% url 'schedule' %}" class="btn btn-primary ml-1">Back to Schedule</a><br><br>
+<h1>{{ my_class.class_name }}</h1>
+<div class = "container">
+<h3>When Do I Attend Class?</h3>
+<h3>{{ my_class.days }} from {{ my_class.time }}</h3>
+<h3><a href ="{{ my_class.class_link }}">Link to Class Session</a></h3>
+{% if my_class.syllabus is None %}
+
+{% else %}
+<h3><a href ="{{ my_class.syllabus }}">Link to Syllabus </a></h3>
+{% endif %}
+{% if my_class.tracker is None %}
+
+{% else %}
+<h3><a href ="{{ my_class.tracker }}">Link to Progress Tracker</a></h3>
+{% endif %}
+{% if my_class.grades is None %}
+
+{% else %}
+<h3><a href ="{{ my_class.grades }}">Link to Grades</a></h3>
+{% endif %}
+<a href="{% url 'edit-class' my_class.slug %}" class="btn btn-primary ml-1">Edit</a> <a href="{% url 'delete-class' my_class.slug %}" class="btn btn-danger ml-2">Delete</a>
+</div>
+</center>
+
+{% endblock %}
